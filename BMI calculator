@@ -25,13 +25,13 @@ def calculate_button_clicked(b):
         elif BMI <= 24.9:
             print(name_value +" your BMI is: "+ str(BMI) + " you are normal weight")
         elif BMI < 29.9:
-            print(name_value +" you are over weight")
+            print(name_value +" your BMI is: "+ str(BMI) +" you are over weight")
         elif BMI < 34.9:
-            print(name_value +" you are obese")
+            print(name_value +" your BMI is: "+ str(BMI) +" you are obese")
         elif BMI < 39.9:
-            print(name_value +" you are severly obese")
+            print(name_value +" your BMI is: "+ str(BMI) +" you are severly obese")
         elif BMI < 189:
-            print(name_value +" You are morbedly obese")
+            print(name_value +" your BMI is: "+ str(BMI) +" You are morbedly obese")
         else:
             print(name_value +" please enter valid input")
                         
