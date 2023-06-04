@@ -1,0 +1,42 @@
+import ipywidgets as widgets
+from IPython.display import display
+
+# Create input widgets
+name = widgets.Text(description = "Name:")
+weight = widgets.FloatText(description='Weight:')
+height = widgets.FloatText(description='Height:')
+
+
+# Create calculate button
+calculate_button = widgets.Button(description='Calculate your BMI')
+
+#Make BMI varible global
+
+
+# Define calculate function
+def calculate_button_clicked(b):
+    weight_value = weight.value
+    height_value = height.value
+    name_value = name.value
+    BMI = round((weight_value * 703) / (height_value * height_value),2)
+    if BMI > 0:
+        if BMI < 18.5:
+            print(name_value + " your BMI is: "+ str(BMI) +" you are under weight")
+        elif BMI <= 24.9:
+            print(name_value +" your BMI is: "+ str(BMI) + " you are normal weight")
+        elif BMI < 29.9:
+            print(name_value +" you are over weight")
+        elif BMI < 34.9:
+            print(name_value +" you are obese")
+        elif BMI < 39.9:
+            print(name_value +" you are severly obese")
+        elif BMI < 189:
+            print(name_value +" You are morbedly obese")
+        else:
+            print(name_value +" please enter valid input")
+                        
+# Attach calculate function to button click event
+calculate_button.on_click(calculate_button_clicked)
+
+# Display widgets
+display(name, weight,height, calculate_button)
